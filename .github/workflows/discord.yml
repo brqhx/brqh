@@ -1,6 +1,9 @@
-name: Discord Test
+name: Discord Notification
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   notify:
@@ -10,5 +13,3 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
-        with:
-          args: --content "GitHub Actions is working!"r
